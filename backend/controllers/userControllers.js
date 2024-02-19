@@ -1,5 +1,48 @@
-const getUser = (req, res) => {
-	res.status(200).json({ message: 'nasz user' });
+const User = require("../models/userModel");
+const createToken = require("../utils/createToken.js");
+
+const registerUser = async (req, res) => {
+  const { login, email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (user) {
+      res
+        .status(400)
+        .json({ message: `user ${user.login} ${user.email} already exists` });
+      // throw new Error('User already exists');
+    }
+
+    const newUser = await User.create({
+      login,
+      email,
+      password,
+    });
+
+    if (newUser) {
+      createToken(res, newUser._id);
+      res
+        .status(200)
+        .json({
+          message: "user registered succesfully",
+          userId: newUser._id,
+          userLogin: newUser.login,
+          userEmail: newUser.email,
+        });
+    } else {
+      res.status(400);
+      throw new Error("ni ma i cześc");
+    }
+  } catch (err) {
+    // next(err);
+    console.log(err);
+    res.status(500).json({ message: err });
+  }
 };
 
-module.exports = { getUser };
+const getUser = (req, res) => {
+  res.status(200).json({ message: "nasz user" });
+};
+
+module.exports = { registerUser, getUser };
