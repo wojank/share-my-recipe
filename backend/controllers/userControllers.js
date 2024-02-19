@@ -42,16 +42,21 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email });
+  try {
+    const user = await User.findOne({ email });
 
-  if (user && (await user.validatePassword(password))) {
-    createToken(res, user._id);
-    res
-      .status(200)
-      .json({ userId: user._id, userLogin: user.login, userEmail: user.email });
-  } else {
-    res.status(401).json({ message: "invalid email or password" });
-    throw new Error("invalid email or password");
+    if (user && (await user.validatePassword(password))) {
+      createToken(res, user._id);
+      res
+        .status(200)
+        .json({ userId: user._id, login: user.login, email: user.email });
+    } else {
+      res.status(401).json({ message: "invalid email or password" });
+      throw new Error("invalid email or password");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error });
   }
 };
 
@@ -63,8 +68,40 @@ const logoutUser = (req, res) => {
   res.status(200).json({ message: "wylogowano poprawnie" });
 };
 
+const updateUser = async (req, res) => {
+  const { login, email, password } = req.body;
+
+  try {
+    const user = await User.findById(req.user._id);
+
+    if (user) {
+      user.login = login || user.login;
+      user.email = email || user.email;
+
+      if (password) {
+        user.password = password;
+      }
+
+      const updatedUser = await user.save();
+
+      res.status(200).json({
+        message: "updated user succesfully",
+        login: updatedUser.login,
+        email: updatedUser.email,
+      });
+    } else {
+      res
+        .status(404)
+        .json({ message: "nie udało się zaktualizować użytkownika" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error });
+  }
+};
+
 const getUser = (req, res) => {
   res.status(200).json({ message: "nasz user" });
 };
 
-module.exports = { registerUser, loginUser, logoutUser, getUser };
+module.exports = { registerUser, loginUser, logoutUser, updateUser, getUser };
