@@ -1,0 +1,14 @@
+@use "../sass/typography" as t;
+
+html {
+  font-family: t.$main-font;
+}
+
+body {
+  background-color: pink;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+}
