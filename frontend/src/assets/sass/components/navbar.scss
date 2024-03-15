@@ -20,39 +20,55 @@
 }
 
 .nav {
+  transition: all 0.4s ease;
+
   &__list {
     display: flex;
-    gap: 30px;
+    gap: 22px;
   }
 
   &__list-item {
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.9px;
+    padding-right: 22px;
+
+    &:not(:last-child) {
+      border-right: 1px solid rgb(219, 214, 214);
+    }
+  }
+
+  &__list-link {
+    color: rgb(16, 16, 16);
 
     &:hover {
       cursor: pointer;
+      text-decoration: rgb(242, 167, 26) 5px underline;
+      text-decoration-skip-ink: none;
+      text-underline-offset: -0.2rem;
     }
   }
 }
 
 .hamburger {
-  // background-color: rgb(210, 210, 245);
-  width: 30px;
-  height: 30px;
   display: flex;
   align-items: center;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  display: none;
 
   &:hover {
     cursor: pointer;
   }
 
   &__bar {
-    display: block;
+    display: inline-block;
     background-color: black;
     width: 100%;
     height: 4px;
     position: relative;
+    transition: all 0.4s ease;
 
     &::before {
       content: "";
@@ -74,5 +90,80 @@
       bottom: -250%;
       right: 0;
     }
+  }
+}
+
+.cta-sign {
+  font-size: 1rem;
+  letter-spacing: 0.9px;
+  background-color: transparent;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: orangered;
+    scale: 0 1;
+    transition: all ease 0.4s;
+  }
+  &:hover::after {
+    scale: 1 1;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 69px;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.343);
+
+    &__list {
+      height: 100vh;
+      width: 40%;
+      background-color: rgb(174, 173, 235);
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.4s ease;
+    }
+
+    &__list-item:first-child {
+      margin-top: 100px;
+    }
+
+    &__list-item:not(:last-child) {
+      border-right: none;
+    }
+  }
+}
+
+.open {
+  left: 0;
+}
+
+@media (max-width: 576px) {
+  .nav__list {
+    width: 100%;
   }
 }
