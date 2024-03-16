@@ -22,8 +22,27 @@ const isOpen = ref(false);
             <li class="nav__list-item">
               <a href="#" class="nav__list-link">Koktajle</a>
             </li>
-            <li class="nav__list-item">
-              <a href="#" class="nav__list-link">Przepisy</a>
+            <li class="nav__list-item dropdown">
+              <a href="#" class="nav__list-link dropdown__btn">Przepisy</a>
+              <div class="dropdown__content">
+                <ul class="dropdown__list">
+                  <li class="dropdown__element">
+                    <a href="" class="nav__list-link">Kuchnia Włoska</a>
+                  </li>
+                  <li class="dropdown__element">
+                    <a href="" class="nav__list-link">Kuchnia Francuska</a>
+                  </li>
+                  <li class="dropdown__element">
+                    <a href="" class="nav__list-link">Kuchnia Hiszpańska</a>
+                  </li>
+                  <li class="dropdown__element">
+                    <a href="" class="nav__list-link">Kuchnia Azjatycka</a>
+                  </li>
+                  <li class="dropdown__element">
+                    <a href="" class="nav__list-link">Kuchnia Meksykańska</a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </nav>
