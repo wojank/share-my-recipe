@@ -1,0 +1,27 @@
+.card {
+  &__image {
+    width: 285px;
+    height: 285px;
+    margin-bottom: 10px;
+  }
+
+  &__category {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(145, 112, 87);
+  }
+
+  &__title {
+    font-weight: 400;
+    letter-spacing: 0.9px;
+  }
+}
+
+.card-link:hover .card__title {
+  text-decoration: rgb(250, 212, 141) 10px underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: -0.3rem;
+}
