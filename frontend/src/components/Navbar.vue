@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import TheHeading from "./TheHeading.vue";
 
 const isOpen = ref(false);
 </script>
@@ -8,9 +9,6 @@ const isOpen = ref(false);
   <header class="navbar">
     <div class="navbar__wrapper">
       <div class="nav-wrapper">
-        <div class="brand">
-          <h2 class="brand__logo">MyRecipe</h2>
-        </div>
         <nav :class="[{ open: isOpen }, 'nav']">
           <ul class="nav__list">
             <li class="nav__list-item">
@@ -52,6 +50,7 @@ const isOpen = ref(false);
       </div>
       <button class="cta-sign">Sign Up</button>
     </div>
+    <TheHeading />
   </header>
 </template>
 
