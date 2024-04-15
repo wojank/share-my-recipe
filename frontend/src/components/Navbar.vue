@@ -7,6 +7,7 @@ const isOpen = ref(false);
 
 <template>
   <header class="navbar">
+    <TheHeading />
     <div class="navbar__wrapper">
       <div class="nav-wrapper">
         <nav :class="[{ open: isOpen }, 'nav']">
@@ -50,7 +51,6 @@ const isOpen = ref(false);
       </div>
       <button class="cta-sign">Sign Up</button>
     </div>
-    <TheHeading />
   </header>
 </template>
 

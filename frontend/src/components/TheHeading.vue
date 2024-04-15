@@ -2,9 +2,7 @@
 <template>
   <div class="heading">
     <h1 class="heading__primary">
-      <span class="heading__share">Share</span>
-      <span class="heading__my">my</span>
-      <span class="heading__recipe">recipe</span>
+      przepisy<span class="heading__dot">.</span>pl
     </h1>
   </div>
 </template>
