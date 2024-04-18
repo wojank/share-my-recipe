@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   createPost,
   readPost,
+  readAllPosts,
   updatePost,
   deletePost,
 } = require("../controllers/postControllers");
@@ -10,8 +11,9 @@ const {
 const upload = require("../config/upload");
 
 router.post("/create", upload, createPost);
-router.get("/read", readPost);
-router.put("/update", updatePost);
-router.post("/delete", deletePost);
+router.get("/read/:postId", readPost);
+router.get("/read", readAllPosts);
+router.put("/update/:postId", upload, updatePost);
+router.delete("/delete/:postId", deletePost);
 
 module.exports = router;
