@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const createToken = require("../utils/createToken.js");
 
+//POST api/user/register
 const registerUser = async (req, res) => {
   const { login, email, password } = req.body;
 
@@ -39,6 +40,7 @@ const registerUser = async (req, res) => {
   }
 };
 
+//POST api/user/login
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -60,6 +62,7 @@ const loginUser = async (req, res) => {
   }
 };
 
+// POST api/user/logout
 const logoutUser = (req, res) => {
   res.cookie("jwt", "", {
     httpOnly: true,
@@ -68,6 +71,7 @@ const logoutUser = (req, res) => {
   res.status(200).json({ message: "wylogowano poprawnie" });
 };
 
+// PUT api/user/update
 const updateUser = async (req, res) => {
   const { login, email, password } = req.body;
 

@@ -2,7 +2,7 @@ const Post = require("../models/postModel");
 const fs = require("fs");
 const path = require("path");
 
-//create post
+//POST api/post/create
 const createPost = async (req, res) => {
   const { category, author, title, content } = req.body;
   const img = req.file.filename;
