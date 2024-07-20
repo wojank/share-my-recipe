@@ -1,0 +1,20 @@
+.news-list {
+  background-color: white;
+
+  &__title {
+    text-align: center;
+    padding: 40px 0;
+    text-transform: capitalize;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  &__wrapper {
+    width: max(1200px, 60%);
+    margin: 0 auto;
+    // background-color: rgb(229, 120, 165);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
