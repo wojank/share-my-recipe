@@ -6,16 +6,19 @@ interface Config {
 }
 
 const props = defineProps<Config>();
+const { color, headline, text } = props;
 </script>
+
 <template>
-  <section class="cta-wrapper" :style="{ backgroundColor: props.color }">
+  <section class="cta-wrapper" :style="{ backgroundColor: color }">
     <div class="cta-wrapper__badge">
-      <h3 class="cta-wrapper__title">{{ props.headline }}</h3>
-      <p class="cta-wrapper__paragraph">{{ props.text }}</p>
+      <h3 class="cta-wrapper__title">{{ headline }}</h3>
+      <p class="cta-wrapper__paragraph">{{ text }}</p>
       <slot></slot>
     </div>
   </section>
 </template>
+
 <style scoped lang="scss">
 @import "../assets/sass/components/cta-wrapper.scss";
 </style>
