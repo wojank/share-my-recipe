@@ -1,0 +1,18 @@
+@use "../colors" as c;
+
+.register-btn {
+  background-color: c.$light-primary;
+  font-family: inherit;
+  padding: 10px 60px;
+  border: 2px solid c.$orange-secondary;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-inline: auto;
+
+  &:hover {
+    cursor: pointer;
+    color: c.$orange-secondary;
+  }
+}

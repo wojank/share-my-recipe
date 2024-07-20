@@ -4,7 +4,8 @@ import TheFooter from "./components/TheFooter.vue";
 import ThePostList from "./components/ThePostList.vue";
 import TheHero from "./components/TheHero.vue";
 import TheNewsList from "./components/TheNewsList.vue";
-import TheNewsletter from "./components/TheNewsletter.vue";
+import CtaNewsletter from "./components/CtaNewsletter.vue";
+import CtaRegister from "./components/CtaRegister.vue";
 </script>
 
 <template>
@@ -13,7 +14,8 @@ import TheNewsletter from "./components/TheNewsletter.vue";
     <TheHero />
     <ThePostList />
     <TheNewsList />
-    <TheNewsletter />
+    <CtaNewsletter />
+    <CtaRegister />
   </main>
   <TheFooter />
 </template>
