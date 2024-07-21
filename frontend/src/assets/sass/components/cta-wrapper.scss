@@ -4,7 +4,7 @@
 .cta-wrapper {
   background-color: c.$blue;
   width: 100%;
-  padding: 50px;
+  padding: 50px 0;
 
   &__badge {
     background-color: c.$light-secondary;
@@ -16,7 +16,7 @@
   &__title {
     font-family: t.$secondary;
     font-weight: 100;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
     text-align: center;
     text-transform: capitalize;
     width: 18ch;
@@ -31,5 +31,11 @@
     color: c.$dark-secondary;
     margin-bottom: 40px;
     letter-spacing: 1px;
+  }
+}
+
+@media (width < 992px) {
+  .cta-wrapper__badge {
+    width: 90%;
   }
 }
