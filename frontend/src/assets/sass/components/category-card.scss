@@ -1,9 +1,9 @@
 @use "../colors" as c;
 @use "../typography" as t;
+
 .cat-card {
-  margin-left: 100px;
   background-color: c.$light-primary;
-  max-width: 350px;
+  width: 350px;
   padding: 20px;
 
   &__img {
