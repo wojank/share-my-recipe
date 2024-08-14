@@ -3,7 +3,8 @@
 
 .cat-card {
   background-color: c.$light-primary;
-  width: 350px;
+  // width: 350px;
+  flex: 0 0 350px;
   padding: 20px;
 
   &__img {

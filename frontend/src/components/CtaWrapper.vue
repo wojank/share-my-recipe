@@ -2,7 +2,7 @@
 interface Config {
   color?: string;
   headline: string;
-  text: string;
+  text?: string;
 }
 
 const props = defineProps<Config>();

@@ -7,6 +7,7 @@ import TheNewsList from "./components/TheNewsList.vue";
 import CtaNewsletter from "./components/CtaNewsletter.vue";
 import CtaRegister from "./components/CtaRegister.vue";
 import CategoryCarousel from "./components/CategoryCarousel.vue";
+import TheSocials from "./components/TheSocials.vue";
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import CategoryCarousel from "./components/CategoryCarousel.vue";
     <CtaNewsletter />
     <CtaRegister />
     <CategoryCarousel />
+    <TheSocials />
   </main>
   <TheFooter />
 </template>
