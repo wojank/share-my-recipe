@@ -5,6 +5,12 @@
     margin-bottom: 10px;
   }
 
+  &__typography {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
   &__category {
     display: inline-block;
     margin-bottom: 10px;
@@ -17,6 +23,7 @@
   &__title {
     font-weight: 400;
     letter-spacing: 0.9px;
+    flex: 0 1 150px;
   }
 }
 
