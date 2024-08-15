@@ -5,10 +5,11 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, 285px);
+    gap: 40px 20px;
     margin: 0 auto;
-    width: 60%;
+    width: 75%;
+    justify-content: center;
   }
 
   &__title {
